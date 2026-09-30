@@ -59,3 +59,25 @@ const works_swiper = new Swiper('#works_inner', {
 Fancybox.bind("[data-fancybox]", {
   // 옵션 (필요 시)
 });
+
+// About 영역에서는 내부 스크롤이 끝날 때만 풀페이지 이동을 허용합니다.
+const aboutScroll = document.querySelector('#about .about-scroll');
+aboutScroll.addEventListener('wheel', (event) => {
+  const atTop = aboutScroll.scrollTop <= 1;
+  const atBottom = aboutScroll.scrollTop + aboutScroll.clientHeight >= aboutScroll.scrollHeight - 1;
+  if ((event.deltaY < 0 && !atTop) || (event.deltaY > 0 && !atBottom)) event.stopPropagation();
+}, { passive: true });
+aboutScroll.addEventListener('touchmove', (event) => event.stopPropagation(), { passive: true });
+document.querySelectorAll('[data-about-contact]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const sections = Array.from(document.querySelectorAll('#wrap > .container > .section'));
+    wrap_swiper.slideTo(sections.findIndex((section) => section.id === 'contact'));
+  });
+});
+document.querySelectorAll('#about .about-nav a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    aboutScroll.scrollTo({ top: target.getBoundingClientRect().top - aboutScroll.getBoundingClientRect().top + aboutScroll.scrollTop - 24, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  });
+});
