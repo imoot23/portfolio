@@ -52,6 +52,17 @@
           한화면으로 스스로를 표현할 수 있는 내용으로 구성
           (사진,이미지,슬라이드,동영상,슬로건(문구),효과,...)-->
       </section>
+      <!-- ABOUT 수정 안내:
+        이름/소개: about-intro 안의 텍스트
+        프로필: about-profile 안의 dt(항목명), dd(내용)
+        프로그램: about-tools 안의 img src(아이콘 경로), span(프로그램명)
+        스킬: about-core 안의 li
+        경력: about-timeline 안의 li
+        관심사: about-interests 안의 p
+        사진: about-photo, about-detail-photo 안의 img src
+        색상/글자 크기/간격: css/style.css의 About 영역
+        사진에 인쇄된 문구는 원본 이미지 교체가 필요합니다.
+      -->
       <section id="about" class="section" aria-labelledby="about-name">
         <div class="about-scroll">
           <div class="about-hero">
@@ -73,7 +84,12 @@
           <div class="about-columns">
             <article id="about-profile" class="about-column">
               <h3>PROFILE</h3>
-              <dl class="about-profile-list"><dt>이름</dt><dd>임병상</dd><dt>분야</dt><dd>그래픽 · 브랜드 · 영상 · 웹</dd><dt>관심</dt><dd>디자인과 글, 시각적 이야기</dd><dt>키워드</dt><dd>섬세함 · 꾸준함 · 표현</dd></dl>
+              <dl class="about-profile-list">
+                <dt>이름</dt><dd>임병상</dd>
+                <dt>분야</dt><dd>그래픽 · 브랜드 · 영상 · 웹</dd>
+                <dt>관심</dt><dd>디자인과 글, 시각적 이야기</dd>
+                <dt>키워드</dt><dd>섬세함 · 꾸준함 · 표현</dd>
+              </dl>
               <button class="about-contact" type="button" data-about-contact>CONTACT ME <span aria-hidden="true">→</span></button>
             </article>
             <article id="about-skills" class="about-column">
@@ -85,8 +101,14 @@
                 <li><img class="about-tool" src="./images/App logo 140.png" alt="" width="52" height="52"><span>Adobe<br>After Effects</span></li>
               </ul>
               <h4>Core Skills</h4>
-              <!-- 검증되지 않은 숙련도 퍼센트 대신 실제 작업 분야를 표기합니다. -->
-              <ul class="about-core"><li>Graphic Design <span>편집 · 포스터</span></li><li>Branding <span>아이덴티티 · 홍보물</span></li><li>Video Editing <span>컷 편집 · 모션</span></li><li>Web Design <span>반응형 · 인터랙션</span></li><li>Generative AI <span>콘셉트 · 콘텐츠</span></li></ul>
+              <!-- 각 li의 작업 분야와 span의 상세 내용을 수정하세요. -->
+              <ul class="about-core">
+                <li>Graphic Design <span>편집 · 포스터</span></li>
+                <li>Branding <span>아이덴티티 · 홍보물</span></li>
+                <li>Video Editing <span>컷 편집 · 모션</span></li>
+                <li>Web Design <span>반응형 · 인터랙션</span></li>
+                <li>Generative AI <span>콘셉트 · 콘텐츠</span></li>
+              </ul>
             </article>
             <article id="about-experience" class="about-column">
               <h3>EXPERIENCE</h3>
@@ -99,7 +121,11 @@
             </article>
             <article class="about-column about-more">
               <h3>MORE ABOUT ME</h3>
-              <ul class="about-interests"><li><span aria-hidden="true">✎</span><p>글과 디자인을 함께 다루며<br>이야기를 시각적으로 표현합니다.</p></li><li><span aria-hidden="true">▰</span><p>다양한 분야의 레퍼런스를 살피고<br>작업에 필요한 아이디어를 모읍니다.</p></li><li><span aria-hidden="true">✦</span><p>작은 디테일을 다듬으며<br>메시지의 전달력을 고민합니다.</p></li></ul>
+              <ul class="about-interests">
+                <li><span aria-hidden="true">✎</span><p>글과 디자인을 함께 다루며<br>이야기를 시각적으로 표현합니다.</p></li>
+                <li><span aria-hidden="true">▰</span><p>다양한 분야의 레퍼런스를 살피고<br>작업에 필요한 아이디어를 모읍니다.</p></li>
+                <li><span aria-hidden="true">✦</span><p>작은 디테일을 다듬으며<br>메시지의 전달력을 고민합니다.</p></li>
+              </ul>
               <div class="about-detail-photo"><img src="./images/div.detail-card.png" alt="책과 화병 — Small details make a big difference." width="370" height="195" loading="lazy"></div>
             </article>
           </div>
