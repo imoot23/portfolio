@@ -44,6 +44,7 @@
       indexList.appendChild(button);
     });
     if (typeof works_swiper !== 'undefined') works_swiper.update();
+    document.dispatchEvent(new Event('works:loaded'));
     status.textContent = published.length ? '' : '공개된 작품이 없습니다.';
   } catch {
     status.textContent = '작품을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.';

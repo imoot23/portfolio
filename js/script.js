@@ -26,26 +26,58 @@ const wrap_swiper = new Swiper('#wrap', {
 });
 
 
+// CMS가 카드를 넣은 후에도 update()로 슬라이드와 화살표를 갱신합니다.
 const works_swiper = new Swiper('#works_inner', {
-  wrapperClass:"list", //슬라이드를 감싸는 영역의 클래스
-  slideClass:"item", //각 슬라이드영역의 클래스
-  slidesPerView: "auto",
-  spaceBetween: 43,
-  speed: 900,
-  nested:true, //내부 swiper에게 설정
-
-  // [3] 마우스 휠 최적화
-  mousewheel: {
-    enabled: true,
-    //forceToAxis: true,    // 가로 휠과 상하 풀페이지 스크롤 간섭 방지
-    sensitivity: 0.8,     // 휠 한 번에 훅 넘어가지 않도록 감도 조절 (기본값 1보다 약간 낮게)
-    releaseOnEdges: true, // 첫 슬라이드나 끝 슬라이드 도달 시 상/하 풀페이지로 휠 전달
-  },
-
+  wrapperClass: 'list',
+  slideClass: 'item',
+  slidesPerView: 'auto', // 기존 297px 카드 폭 유지
+  spaceBetween: 43, // 카드 간격
+  speed: 650, // 좌우 전환 시간(ms)
+  nested: true, // 바깥 세로 Swiper와 가로 제스처 분리
+  grabCursor: true,
+  watchOverflow: true,
+  resizeObserver: true,
+  mousewheel: { enabled: true, forceToAxis: true, releaseOnEdges: true },
+  navigation: { prevEl: '.works-prev', nextEl: '.works-next' },
+  a11y: { prevSlideMessage: '이전 작품', nextSlideMessage: '다음 작품' },
+  on: { slideChange: updateWorksPosition, update: updateWorksPosition }
 });
-
-
-
+function updateWorksPosition(swiper) {
+  const counter = document.querySelector('.works-position');
+  const total = swiper.slides.length;
+  if (counter) counter.textContent = total
+    ? `${String(swiper.activeIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`
+    : '00 / 00';
+}
+document.getElementById('works_inner').addEventListener('keydown', event => {
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    event.preventDefault();
+    event.key === 'ArrowRight' ? works_swiper.slideNext() : works_swiper.slidePrev();
+  }
+});
+let worksEntrance;
+function revealWorks() {
+  if (wrap_swiper.slides[wrap_swiper.activeIndex]?.id !== 'works') return;
+  const cards = document.querySelectorAll('#works_inner .work-card');
+  if (!cards.length || typeof gsap === 'undefined') return;
+  worksEntrance?.kill();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.set(cards, { clearProps: 'opacity,transform' });
+    return;
+  }
+  // transform으로 이동하는 바깥 Swiper의 화면 진입을 GSAP에 연결합니다.
+  worksEntrance = gsap.fromTo(cards, { y: 32, opacity: 0 }, {
+    y: 0, opacity: 1, duration: .6, stagger: .08, ease: 'power2.out',
+    overwrite: 'auto', clearProps: 'opacity,transform'
+  });
+}
+wrap_swiper.on('slideChangeTransitionEnd', revealWorks);
+document.addEventListener('works:loaded', () => {
+  works_swiper.update();
+  works_swiper.navigation.update();
+  updateWorksPosition(works_swiper);
+  revealWorks();
+});
 
 Fancybox.bind("[data-fancybox]", {
   // 옵션 (필요 시)
@@ -85,3 +117,12 @@ document.querySelectorAll('[data-section]').forEach(button => button.addEventLis
   const sections = [...document.querySelectorAll('#wrap > .container > .section')];
   wrap_swiper.slideTo(sections.findIndex(section => section.id === button.dataset.section));
 }));
+
+// #works 링크를 열면 바로 작품 화면으로 이동합니다.
+function openLinkedSection() {
+  const id = location.hash.slice(1);
+  const index = [...wrap_swiper.slides].findIndex(section => section.id === id);
+  if (index >= 0) { wrap_swiper.slideTo(index, 0); revealWorks(); }
+}
+openLinkedSection();
+window.addEventListener('hashchange', openLinkedSection);
