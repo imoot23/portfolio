@@ -40,10 +40,10 @@
     const indexList = document.getElementById('index-projects');
     published.slice(0, 5).forEach((work, index) => {
       const button = document.createElement('button'); button.textContent = `w-project${index + 1}`;
-      button.addEventListener('click', () => { wrap_swiper.slideTo(2); works_swiper.slideTo(index); });
+      button.addEventListener('click', () => { wrap_swiper.slideTo(2); works_swiper.params.loop ? works_swiper.slideToLoop(index) : works_swiper.slideTo(index); });
       indexList.appendChild(button);
     });
-    if (typeof works_swiper !== 'undefined') works_swiper.update();
+    if (typeof works_swiper !== 'undefined' && works_swiper.initialized) works_swiper.update();
     document.dispatchEvent(new Event('works:loaded'));
     status.textContent = published.length ? '' : '공개된 작품이 없습니다.';
   } catch {

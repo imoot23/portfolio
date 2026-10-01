@@ -116,3 +116,16 @@ html, body { height: 100%; overflow: hidden; }
 @media(max-width:700px) {
   #works #works_inner .work-card .meta-info .project-title { font-size: 16px; line-height: 21px; }
 }
+
+/* 중앙 지면을 순환 슬라이드의 창으로 사용합니다. 바깥 카드는 숨깁니다. */
+#works #works_inner { left: 663px; top: 96px; width: 594px; height: 841px; padding: 73px 0 128px; box-sizing: border-box; overflow: hidden; }
+#works #works_inner .list { height: 640px; }
+.works-controls { left: 663px; width: 594px; }
+#works #works_inner:focus-visible { outline-offset: -3px; }
+@media(max-width:700px) {
+  #works .paper-outline { left: 15%; top: clamp(70px, 12vh, 120px); width: 70%; height: calc(min(510px, 60vh) + 80px); }
+  #works #works_inner { position: relative; left: 15%; top: 0; width: 70%; height: min(510px, 60vh); padding: 0; }
+  #works #works_inner .list { height: min(510px, 60vh); }
+  .works-controls { left: 15%; width: 70%; gap: 10px; }
+  .works-hint { display: none; }
+}

@@ -28,6 +28,9 @@ const wrap_swiper = new Swiper('#wrap', {
 
 // CMS가 카드를 넣은 후에도 update()로 슬라이드와 화살표를 갱신합니다.
 const works_swiper = new Swiper('#works_inner', {
+  init: false, // CMS 카드가 준비된 뒤 초기화
+  centeredSlides: true, // 중앙 카드를 사각형의 중심에 배치
+  loop: true, // 05 다음에 01로 이어지는 순환 이동
   wrapperClass: 'list',
   slideClass: 'item',
   slidesPerView: 'auto', // 기존 297px 카드 폭 유지
@@ -46,7 +49,7 @@ function updateWorksPosition(swiper) {
   const counter = document.querySelector('.works-position');
   const total = swiper.slides.length;
   if (counter) counter.textContent = total
-    ? `${String(swiper.activeIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`
+    ? `${String(swiper.realIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`
     : '00 / 00';
 }
 document.getElementById('works_inner').addEventListener('keydown', event => {
@@ -73,7 +76,10 @@ function revealWorks() {
 }
 wrap_swiper.on('slideChangeTransitionEnd', revealWorks);
 document.addEventListener('works:loaded', () => {
-  works_swiper.update();
+  if (!works_swiper.initialized) {
+    works_swiper.params.loop = document.querySelectorAll('#works_inner .item').length >= 3;
+    works_swiper.init();
+  } else works_swiper.update();
   works_swiper.navigation.update();
   updateWorksPosition(works_swiper);
   revealWorks();
@@ -110,7 +116,7 @@ function fitDesign() {
   const scale = Math.min(innerWidth / 1920, innerHeight / 1080);
   document.documentElement.style.setProperty('--design-scale', scale);
   document.documentElement.style.setProperty('--scaled-height', `${1080 * scale}px`);
-  works_swiper.update();
+  if (works_swiper.initialized) works_swiper.update();
 }
 fitDesign(); window.addEventListener('resize', fitDesign);
 document.querySelectorAll('[data-section]').forEach(button => button.addEventListener('click', () => {
