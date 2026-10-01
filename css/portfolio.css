@@ -134,3 +134,7 @@ html, body { height: 100%; overflow: hidden; }
 .cover-identity .cover-description { position: relative; left: 50%; transform: translateX(-50%); width: max-content; }
 .cover-description > span { display: block; white-space: nowrap; }
 @media(max-width:700px) { .cover-description { font-size: clamp(10px, 3.2vw, 13px); } }
+
+/* 제목 오타 수정: 자간과 세로 위치를 유지하며 글자 영역만 가로 중앙 정렬. */
+#main .cover-title { left: 50%; width: max-content; transform: translateX(-50%); padding-left: 37.68px; }
+@media(max-width:700px) { #main .cover-title { padding-left: 10px; } }
