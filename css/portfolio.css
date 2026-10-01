@@ -129,3 +129,8 @@ html, body { height: 100%; overflow: hidden; }
   .works-controls { left: 15%; width: 70%; gap: 10px; }
   .works-hint { display: none; }
 }
+
+/* MAIN 소개는 지정된 두 줄을 유지하고 IMU와 같은 중심에 정렬합니다. */
+.cover-identity .cover-description { position: relative; left: 50%; transform: translateX(-50%); width: max-content; }
+.cover-description > span { display: block; white-space: nowrap; }
+@media(max-width:700px) { .cover-description { font-size: clamp(10px, 3.2vw, 13px); } }
