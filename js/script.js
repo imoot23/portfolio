@@ -1,12 +1,3 @@
-const video = document.getElementById('back');
-const main_inner = document.getElementById('main_inner');
-// 영상 재생이 끝났을 때 이벤트 발생
-video.addEventListener('ended', () => {
-  main_inner.classList.add('active');
-});
-
-
-
 const gnb_swiper = new Swiper('#gnb', {
   wrapperClass:"menu", //슬라이드를 감싸는 영역의 클래스
   slideClass:"btn", //각 슬라이드영역의 클래스
@@ -39,7 +30,7 @@ const works_swiper = new Swiper('#works_inner', {
   wrapperClass:"list", //슬라이드를 감싸는 영역의 클래스
   slideClass:"item", //각 슬라이드영역의 클래스
   slidesPerView: "auto",
-  spaceBetween: 80,
+  spaceBetween: 43,
   speed: 900,
   nested:true, //내부 swiper에게 설정
 
@@ -81,3 +72,16 @@ document.querySelectorAll('#about .about-nav a').forEach((link) => {
     aboutScroll.scrollTo({ top: target.getBoundingClientRect().top - aboutScroll.getBoundingClientRect().top + aboutScroll.scrollTop - 24, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   });
 });
+
+// 데스크톱은 Figma 1920×1080 비율을 유지하고 모바일은 CSS로 재배치합니다.
+function fitDesign() {
+  const scale = Math.min(innerWidth / 1920, innerHeight / 1080);
+  document.documentElement.style.setProperty('--design-scale', scale);
+  document.documentElement.style.setProperty('--scaled-height', `${1080 * scale}px`);
+  works_swiper.update();
+}
+fitDesign(); window.addEventListener('resize', fitDesign);
+document.querySelectorAll('[data-section]').forEach(button => button.addEventListener('click', () => {
+  const sections = [...document.querySelectorAll('#wrap > .container > .section')];
+  wrap_swiper.slideTo(sections.findIndex(section => section.id === button.dataset.section));
+}));

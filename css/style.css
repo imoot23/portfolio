@@ -419,3 +419,25 @@ header #gnb .btn.active {
  #about .about-hero { grid-template-columns: 1fr; }
  #about .about-photo img { height: 320px; }
 }
+
+/* CMS: 카드의 기존 스타일을 유지하며 폼과 작은 화면만 보완합니다. */
+#works-status { color: #78756e; }
+#contact .contact-scroll { width: 100%; height: calc(100% - 80px); margin-top: 60px; overflow-y: auto; overscroll-behavior: contain; }
+#contact .guestbook-form { box-sizing: border-box; width: min(560px, 84%); margin: 30px auto; display: flex; flex-direction: column; gap: 12px; }
+#contact .guestbook-form h2 { font-size: clamp(28px, 4vw, 44px); }
+#contact input, #contact textarea, #contact button { box-sizing: border-box; font: inherit; color: inherit; }
+#contact input, #contact textarea { width: 100%; border: 1px solid #3336; border-radius: 4px; padding: 12px; background: #ffffffb3; }
+#contact textarea { resize: vertical; }
+#contact button { padding: 12px 20px; background: transparent; border: 1px solid currentColor; border-radius: 4px; cursor: pointer; }
+#contact button:disabled { opacity: .5; cursor: default; }
+#contact .guestbook-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+#contact :focus-visible { outline: 2px solid #333; outline-offset: 3px; }
+@media (max-width: 700px) {
+  header { padding: 0 16px; } header #title { font-size: 18px; } header #gnb ul { gap: 14px; }
+  #works #works_inner .item { width: 85%; }
+  #works .scroll-guide { display: none; }
+  #works #works_inner { padding: 24px 0; }
+  #works #works_inner .work-card .thumb-box { aspect-ratio: 4 / 3; }
+  #main #main_inner .title { font-size: 7vw; }
+  #main #main_inner .sub_line { left: 0; font-size: 14px; }
+}

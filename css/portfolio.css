@@ -1,0 +1,81 @@
+/* Figma 90:948, 90:958, 90:1153, 91:1257 — native HTML/CSS */
+:root { --ink: #000; --paper: #fff; --muted: #898989; font-family: Inter, 'Noto Sans KR', sans-serif; color: var(--ink); }
+body { background: var(--paper); }
+header { height: 48px; box-shadow: none; background: #ffffffd9; font-size: 12px; }
+header #title { font: 300 16px 'Noto Sans KR', sans-serif; }
+header #gnb .btn.active { color: #000; text-decoration: underline; text-underline-offset: 5px; }
+#wrap .section { position: relative; background: #fff; overflow: hidden; }
+.design-stage { position: relative; width: 1920px; height: 1080px; flex-shrink: 0; transform: scale(var(--design-scale, 1)); transform-origin: center; font-size: 20px; font-weight: 300; line-height: 1.2; }
+#main .cover-title { position: absolute; left: 679px; top: 453px; font: 400 60px/1.45 'Noto Sans KR', sans-serif; letter-spacing: 37.68px; }
+.cover-identity { position: absolute; top: 633px; left: 829px; width: 275px; text-align: center; font: 300 20px/1.45 'Noto Sans KR', sans-serif; }
+.photo-placeholder { width: 105px; height: 200px; background: #d9d9d9; margin: 0 auto; }
+.cover-name { font-size: 30px; margin: 24px 0 17px; }
+.cover-identity strong { font-weight: 500; }
+.cover-index { position: absolute; top: 733px; left: 1680px; width: 136px; }
+.cover-index h3 { font: 200 50px/1.44 'Noto Sans KR', sans-serif; margin-bottom: 14px; }
+.index-links { border-top: 3px solid #000; padding-top: 8px; }
+.index-links button { display: block; border: 0; background: none; font: 400 20px/1.2 Inter,sans-serif; color: #898989; text-align: left; cursor: pointer; }
+#index-projects button { padding-left: 8px; }
+#wrap #about { padding: 0; background: #fff; color: #000; display: flex; }
+#about .about-scroll { width: 100%; height: 100%; overflow: auto; display: flex; justify-content: center; align-items: center; }
+.about-statements .statement, .life-note { position: absolute; }
+.about-statements .statement { font-size: 30px; font-weight: 400; white-space: nowrap; }
+.statement.first { left: 135px; top: 231px; }.statement.second { left: 438px; top: 376px; }.statement.third { left: 1100px; top: 478px; }
+.life-note { display: flex; gap: 9px; align-items: start; color: #898989; font-size: 20px; font-weight: 400; }
+.life-note span,.contact-tag { background: #000; color: #fff; padding: 10px; font: 400 16px/23px 'Noto Sans KR',sans-serif; white-space: nowrap; }
+.life-note p { white-space: nowrap; }
+.life-note.past { left: 768px; top: 209px; }.life-note.present { left: 900px; top: 289px; }.life-note.future { left: 1241px; top: 354px; }
+.about-info { position: absolute; left: 89px; right: 49px; top: 664px; display: grid; grid-template-columns: 348px 436px 540px; justify-content: space-between; }
+.about-info::before { content: ''; position: absolute; left: -3px; right: 18px; top: 55px; height: 1px; background: #000; }
+.about-info h3 { font: 400 20px/29px 'Noto Sans KR',sans-serif; margin-bottom: 60px; }
+.about-info dl { display: grid; font: 300 20px/24px Inter,'Noto Sans KR',sans-serif; }
+.info-profile dl { grid-template-columns: 133px 1fr; }.info-experience dl { grid-template-columns: 205px 1fr; }
+.social-icons { display: flex; gap: 14px; padding-top: 9px; }
+.contact-tag { border: 0; margin: 19px 0 0 163px; cursor: pointer; }
+.skill-group { margin-bottom: 10px; }.skill-group h4 { font: 400 20px/29px 'Noto Sans KR',sans-serif; margin-bottom: 5px; }.skill-group h4 img { vertical-align: middle; margin-left: 4px; }.skill-group p { line-height: 24px; }
+#works { background-image: none; }
+.paper-outline { position: absolute; left: 663px; top: 96px; width: 594px; height: 841px; border: 1px solid #000; box-sizing: border-box; }
+#works #works_inner { position: absolute; left: 137px; top: 169px; width: 1646px; padding: 0; overflow: hidden; }
+#works #works_inner .item { width: 297px; height: 640px; }
+#works #works_inner .work-card { position: relative; height: 640px; box-sizing: border-box; padding: 0; border: 0; border-radius: 0; background: #000; color: #fff; box-shadow: none; }
+#works #works_inner .work-card .meta-info { margin: 0; padding: 12px 15px 0; height: 110px; box-sizing: border-box; }
+#works #works_inner .work-card .top-row { margin: 0; }
+#works #works_inner .work-card .index-num { font: 400 14px/17px Inter,sans-serif; color: #fff; }
+#works #works_inner .work-card .category-stamp { display: none; }
+#works #works_inner .work-card .project-title { color: #fff; font: 400 20px/24px Inter,'Noto Sans KR',sans-serif; letter-spacing: -.32px; margin: 0; overflow-wrap: anywhere; }
+#works #works_inner .work-card .thumb-box { width: 297px; height: 420px; aspect-ratio: auto; border: 1px solid #000; box-sizing: border-box; border-radius: 0; background: #fff; flex-shrink: 0; }
+#works #works_inner .work-card .thumb-box img { object-fit: contain; filter: none; }
+#works #works_inner .work-card .thumb-box img:not([src]) { display: none; }
+#works #works_inner .work-card .project-desc { padding: 0 15px; height: 110px; display: flex; align-items: center; justify-content: center; color: #fff; font: 400 20px/24px Inter,'Noto Sans KR',sans-serif; text-align: center; }
+#works #works_inner .work-card:hover { transform: none; box-shadow: none; }
+#works-status { position: absolute; left: 137px; top: 830px; }
+.section-caption { position: absolute; left: 660px; top: 947px; width: 600px; font: 300 60px/87px 'Noto Sans KR',sans-serif; letter-spacing: 56.68px; white-space: nowrap; }
+#wrap #contact { background: #000; color: #fff; }
+#contact .contact-scroll { height: 100%; margin: 0; display: block; overflow-x: hidden; }
+.contact-stage { position: relative; left: 50%; margin-left: -960px; margin-top: calc((var(--scaled-height, 1080px) - 1080px) / 2); margin-bottom: calc((var(--scaled-height, 1080px) - 1080px) / 2); }
+.contact-paper { position: absolute; left: 663px; top: 96px; width: 594px; height: 841px; background: #fff; color: #000; }
+.contact-name { position: absolute; left: 244px; top: 232px; font: 300 30px/43px 'Noto Sans KR',sans-serif; letter-spacing: 3px; }
+.contact-paper .photo-placeholder { position: absolute; left: 244px; top: 297px; }
+.contact-details { position: absolute; left: 124px; top: 550px; display: grid; grid-template-columns: 112px 1fr; font: 300 20px/24px Inter,'Noto Sans KR',sans-serif; white-space: nowrap; }
+.contact-details dd:last-child a { text-decoration: underline; }
+#contact .section-caption { letter-spacing: 26.68px; }
+#contact .guestbook-area { padding: 40px 0 80px; border-top: 1px solid #555; }
+#contact .guestbook-form { margin: 0 auto; font-size: 16px; }
+#contact input,#contact textarea { background: #fff; color: #000; border-color: #aaa; }
+#contact :focus-visible { outline-color: #898989; }
+#wrap .pager,#wrap .navi { display: none; }
+@media(max-width:700px) {
+  header { padding: 0 16px; } header #gnb ul { gap: 16px; }
+  .design-stage { width: 100%; height: auto; transform: none; min-height: 100%; font-size: 14px; }
+  #main .cover-title { left: 0; top: 27%; width: 100%; text-align: center; font-size: 28px; letter-spacing: 10px; }
+  .cover-identity { left: 50%; top: 43%; transform: translateX(-50%); width: 260px; font-size: 13px; }.photo-placeholder { width: 63px; height: 120px; }.cover-name { font-size: 23px; margin: 12px 0; }
+  .cover-index { left: auto; right: 25px; top: auto; bottom: 25px; width: 95px; }.cover-index h3 { font-size: 25px; margin-bottom: 5px; }.index-links button { font-size: 12px; }#index-projects { display: none; }
+  #about .about-scroll { display: block; } .about-stage { padding: 90px 7% 40px; box-sizing: border-box; }
+  .about-statements { display: flex; flex-direction: column; gap: 26px; }.about-statements .statement,.life-note { position: static; white-space: normal; }.about-statements .statement { font-size: 21px; }.life-note { font-size: 13px; }.life-note p { white-space: normal; }.life-note span { font-size: 11px; padding: 5px; }
+  .about-info { position: static; display: flex; flex-direction: column; gap: 32px; margin-top: 50px; }.about-info::before { display: none; }.about-info h3 { font-size: 16px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #000; }.about-info dl { font-size: 13px; grid-template-columns: 95px 1fr; }.skill-group h4 { font-size: 15px; }.skill-group p { font-size: 13px; }.contact-tag { margin-left: 95px; font-size: 12px; padding: 6px; }
+  .works-stage { padding-top: 120px; }.paper-outline { left: 15%; top: 80px; width: 70%; height: 65%; }
+  #works #works_inner { position: relative; left: 7%; top: 0; width: 86%; padding: 0; }
+  #works #works_inner .item { width: 240px; height: 510px; }#works #works_inner .work-card { height: 510px; }#works #works_inner .work-card .meta-info { height: 85px; }#works #works_inner .work-card .project-title { font-size: 16px; line-height: 21px; }#works #works_inner .work-card .thumb-box { width: 240px; height: 340px; }#works #works_inner .work-card .project-desc { height: 85px; font-size: 15px; }
+  .section-caption { position: relative; left: 0; top: 0; width: 100%; text-align: center; font-size: 30px; letter-spacing: 15px; line-height: 1.5; margin-top: 60px; }
+  .contact-stage { left: 0; margin: 0; min-height: 100vh; padding: 80px 0 35px; box-sizing: border-box; }.contact-paper { position: relative; left: 0; top: 0; width: 78%; height: 65vh; min-height: 460px; margin: 0 auto; }.contact-name { left: 0; top: 20%; width: 100%; text-align: center; font-size: 23px; }.contact-paper .photo-placeholder { left: 50%; top: 34%; transform: translateX(-50%); }.contact-details { left: 10%; top: 70%; font-size: 12px; line-height: 18px; grid-template-columns: 65px 1fr; }#contact .section-caption { letter-spacing: 9px; font-size: 25px; margin-top: 20px; }
+}

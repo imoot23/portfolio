@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>IMU — Portfolio</title>
 
   <!--파비콘-->
   <link rel="icon" href="./images/favicon.png">
@@ -15,11 +15,12 @@
   <!--내부스타일연결-->
   <link rel="stylesheet" href="./fonts/web_fonts.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/portfolio.css">
 </head>
 
 <body>
   <header>
-    <h1 id="title">My portfolio</h1>
+    <h1 id="title">IMU</h1>
     <nav id="gnb">
       <ul class="menu">
         <li class="btn">main</li>
@@ -33,246 +34,51 @@
   <main id="wrap">
     <div class="container">
       <section id="main" class="section">
-        <div id="main_bg">
-          <video id="back" autoplay muted playsinline>
-            <source src="./images/bg2.mp4">
-          </video>
+        <div class="design-stage main-stage">
+          <h2 class="cover-title">PORTFOLO</h2>
+          <div class="cover-identity"><div class="photo-placeholder" aria-label="사진 자리"></div><p class="cover-name">IMU</p><p>Writing / <strong>Edit Design</strong> / Painting<br><strong>Building Design</strong> &amp; Construction</p></div>
+          <nav class="cover-index" aria-label="INDEX"><h3>INDEX</h3><div class="index-links"><button data-section="about">About</button><button data-section="works">Work</button><div id="index-projects"></div><button data-section="contact">Contact</button></div></nav>
         </div>
-        <div id="main_inner">
-          <h2 class="title">
-            <span>생각보다 유능하고,</span>
-            <span>보기보다 섬세합니다.</span>
-          </h2>
-          <div class="sub_line">
-            <p class="sub1">&oplus; Rough outside, precise inside.<br> Crafting visuals that speak for themselves.</p>
-            <p class="sub2">&oplus; Quietly persistent, surprisingly detailed.<br> Welcome to my creative archive.</p>
-          </div>
-        </div>
-        <!--main(home):사이트에 접속시, 맨 처음 보이는 화면
-          한화면으로 스스로를 표현할 수 있는 내용으로 구성
-          (사진,이미지,슬라이드,동영상,슬로건(문구),효과,...)-->
       </section>
-      <!-- ABOUT 수정 안내:
-        이름/소개: about-intro 안의 텍스트
-        프로필: about-profile 안의 dt(항목명), dd(내용)
-        프로그램: about-tools 안의 img src(아이콘 경로), span(프로그램명)
-        스킬: about-core 안의 li
-        경력: about-timeline 안의 li
-        관심사: about-interests 안의 p
-        사진: about-photo, about-detail-photo 안의 img src
-        색상/글자 크기/간격: css/style.css의 About 영역
-        사진에 인쇄된 문구는 원본 이미지 교체가 필요합니다.
-      -->
-      <section id="about" class="section" aria-labelledby="about-name">
-        <div class="about-scroll">
-          <div class="about-hero">
-            <div class="about-intro">
-              <p class="about-eyebrow">DESIGNER</p>
-              <h2 id="about-name">Byeongsang<br>Im</h2>
-              <p class="about-lead">생각보다 유능하고, 보기보다 섬세합니다.</p>
-              <p class="about-description">아이디어를 이미지와 영상으로 표현합니다.<br>그래픽, 브랜드, 영상과 웹을 넘나들며<br>메시지가 자연스럽게 전해지는<br>섬세한 시각 경험을 고민합니다.</p>
-              <p class="about-motto">Designing meaningful<br>experiences for a better tomorrow.</p>
-            </div>
-            <div class="about-photo"><img src="./images/hero.png" alt="창가에서 아이디어를 구상하는 디자이너" width="1141" height="595"></div>
-            <nav class="about-nav" aria-label="소개 영역 바로가기">
-              <a href="#about-profile"><small>01</small>PROFILE</a>
-              <a href="#about-skills"><small>02</small>SKILLS</a>
-              <a href="#about-experience"><small>03</small>EXPERIENCE</a>
-              <button type="button" data-about-contact><small>04</small>CONTACT</button>
-            </nav>
+      <section id="about" class="section">
+        <div class="about-scroll swiper-no-swiping"><div class="design-stage about-stage">
+          <div class="about-statements">
+            <p class="statement first">저의 크리에이터 활동명은 imoot(무트)입니다.</p>
+            <p class="statement second">한눈에 보이는 실용적인 디자인과 아날로그적인 삶을 추구합니다.</p>
+            <p class="statement third">여기선 편집디자인과 건축디자인만을 모아봅니다.</p>
+            <div class="life-note past"><span>PAST</span><p>그림을 그리고 글을 쓰는 것만으로는 부족하다고 느껴 디자인을 공부하게 됐습니다.<br>낙서같은 글과 그림들을 체계적인 툴로 표현하고 싶었던거죠.</p></div>
+            <div class="life-note present"><span>PRESENT</span><p>20대에는 인테리어 시공사, 인테리어 잡지사, 출판사...어쩌면 영화판에서<br>첫 직장을 시작하고 싶습니다.</p></div>
+            <div class="life-note future"><span>FUTURE</span><p>몸을 쓰는 일을 하면서 부업으로 디자인을 겸직하고 있습니다.<br>저의 마지막 직업은 1인 출판사를 운영하는 농부입니다.</p></div>
           </div>
-          <div class="about-columns">
-            <article id="about-profile" class="about-column">
-              <h3>PROFILE</h3>
-              <dl class="about-profile-list">
-                <dt>이름</dt><dd>임병상</dd>
-                <dt>분야</dt><dd>그래픽 · 브랜드 · 영상 · 웹</dd>
-                <dt>관심</dt><dd>디자인과 글, 시각적 이야기</dd>
-                <dt>키워드</dt><dd>섬세함 · 꾸준함 · 표현</dd>
-              </dl>
-              <button class="about-contact" type="button" data-about-contact>CONTACT ME <span aria-hidden="true">→</span></button>
-            </article>
-            <article id="about-skills" class="about-column">
-              <h3>SKILLS</h3><h4>Design Tool</h4>
-              <ul class="about-tools">
-                <li><img class="about-tool" src="./images/App logo 198.png" alt="" width="52" height="52"><span>Figma</span></li>
-                <li><img class="about-tool" src="./images/adobe-photoshop-icon.png" alt="" width="52" height="52"><span>Adobe<br>Photoshop</span></li>
-                <li><img class="about-tool" src="./images/App logo 138.png" alt="" width="52" height="52"><span>Adobe<br>Illustrator</span></li>
-                <li><img class="about-tool" src="./images/App logo 140.png" alt="" width="52" height="52"><span>Adobe<br>After Effects</span></li>
-              </ul>
-              <h4>Core Skills</h4>
-              <!-- 각 li의 작업 분야와 span의 상세 내용을 수정하세요. -->
-              <ul class="about-core">
-                <li>Graphic Design <span>편집 · 포스터</span></li>
-                <li>Branding <span>아이덴티티 · 홍보물</span></li>
-                <li>Video Editing <span>컷 편집 · 모션</span></li>
-                <li>Web Design <span>반응형 · 인터랙션</span></li>
-                <li>Generative AI <span>콘셉트 · 콘텐츠</span></li>
-              </ul>
-            </article>
-            <article id="about-experience" class="about-column">
-              <h3>EXPERIENCE</h3>
-              <ol class="about-timeline">
-                <li><span class="about-time">DESIGN</span><div><h4>시각디자인 학습</h4><p>그래픽과 광고 콘텐츠 제작,<br>디지털 디자인 작업</p></div></li>
-                <li><span class="about-time">VIDEO</span><div><h4>방송부 영상 제작</h4><p>기획과 촬영에 참여하고<br>수능 응원 영상 전체 편집</p></div></li>
-                <li><span class="about-time">AWARD</span><div><h4>지구 환경 포스터 공모전</h4><p>제5회 부산광역시 교육감상</p></div></li>
-                <li><span class="about-time">INTEREST</span><div><h4>디자인과 글의 결합</h4><p>이야기를 담는 편집 디자인 탐구</p></div></li>
-              </ol>
-            </article>
-            <article class="about-column about-more">
-              <h3>MORE ABOUT ME</h3>
-              <ul class="about-interests">
-                <li><span aria-hidden="true">✎</span><p>글과 디자인을 함께 다루며<br>이야기를 시각적으로 표현합니다.</p></li>
-                <li><span aria-hidden="true">▰</span><p>다양한 분야의 레퍼런스를 살피고<br>작업에 필요한 아이디어를 모읍니다.</p></li>
-                <li><span aria-hidden="true">✦</span><p>작은 디테일을 다듬으며<br>메시지의 전달력을 고민합니다.</p></li>
-              </ul>
-              <div class="about-detail-photo"><img src="./images/div.detail-card.png" alt="책과 화병 — Small details make a big difference." width="370" height="195" loading="lazy"></div>
-            </article>
+          <div class="about-info">
+            <article class="info-profile"><h3>PROFILE</h3><dl><dt>본명</dt><dd>이름 입력</dd><dt>생년월일</dt><dd>생년월일 입력</dd><dt>거주지</dt><dd>거주지 입력</dd><dt>이메일</dt><dd>이메일 입력</dd><dt>SNS</dt><dd class="social-icons"><span><img src="images/figma/instagram.png" alt="" width="20" height="20"></span><img src="images/figma/x.png" alt="X" width="20" height="20"></dd></dl><button data-about-contact class="contact-tag">&gt;CONTACT ME</button></article>
+            <article class="info-skills"><h3>SKILLS &amp; CERTIFICATE</h3><div class="skill-group"><h4>Design Tool</h4><p>figma / Adobe Illustrator / Adobe Photoshop</p></div><div class="skill-group"><h4>Building Tool</h4><p>Auto Cad / Revit / Sketch up / D5 render</p></div><div class="skill-group"><h4>Ceritificate <img src="images/figma/certificate.png" alt="자격증" width="30" height="30"></h4><p>전산응용건축제도기능사 / Acp Ai(29.7만료) /<br>컴퓨터그래픽기능사(예정)/Gtq 포토샵</p></div><div class="skill-group"><h4>Core Skills</h4><p>Writing / Design / Painting / Interior Construction</p></div></article>
+            <article class="info-experience"><h3>EXPERIENCE</h3><dl><dt>2023~2027</dt><dd>전북대 주거환경학과 학사</dd><dt>2026.May~Aug.</dt><dd>영화제작스쿨 17기 미술팀</dd><dt>2026.Dec.</dt><dd>제14회 한옥디자인국제공모전 출품(예정)</dd></dl></article>
           </div>
-        </div>
+        </div></div>
       </section>
       <section id="works" class="section">
-        <!--works(portfolio):작업한 프로젝트들을 진열하고, 
-          소개 및 설명(기획)을 첨부하고, 모달윈도우를 통해
-          세부페이지로 연결-->
-        <div class="work-header">
-          <div class="title-area">
-            <p class="sub-label">Selected Atelier Works</p>
-            <h2 class="main-title">Crafted Archive</h2>
-          </div>
-          <div class="scroll-guide">
-            Scroll / Drag to browse &rarr;
-          </div>
-        </div>
-
+        <div class="design-stage works-stage"><div class="paper-outline" aria-hidden="true"></div>
         <div id="works_inner">
-          <div class="list">            
-            <!-- 01. 영상편집 -->
-            <div class="item">
-              <a href="detail-video.html" class="work-card" data-fancybox="portfolio" data-type="iframe">
-              <div class="thumb-box">
-                <img src="https://picsum.photos/900/620?random=11" alt="영상편집">
-              </div>
-              <div class="meta-info">
-                <div class="top-row">
-                  <span class="index-num">No. 01</span>
-                  <span class="category-stamp">Video Editing</span>
-                </div>
-                <h3 class="project-title">Commercial Film</h3>
-                <p class="project-desc">호흡감 있는 컷 편집과 필름 그레인 색보정(DI)으로 직조한 브랜드 필름.</p>
-              </div>
-            </a>
-            </div>
-
-            <!-- 02. 모션그래픽 -->
-            <div class="item">
-              <a href="detail-motion.html" class="work-card" data-fancybox="portfolio" data-type="iframe">
-                <div class="thumb-box">
-                  <img src="https://picsum.photos/900/620?random=12" alt="모션그래픽">
-                </div>
-                <div class="meta-info">
-                  <div class="top-row">
-                    <span class="index-num">No. 02</span>
-                    <span class="category-stamp">Motion Graphics</span>
-                  </div>
-                  <h3 class="project-title">Kinetic Identity</h3>
-                  <p class="project-desc">유기적인 타이포그래피 모션과 아날로그 질감을 결합한 인트로 시퀀스.</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- 03. 포스터 -->
-            <div class="item">
-              <a href="detail-poster.html" class="work-card" data-fancybox="portfolio" data-type="iframe">
-                <div class="thumb-box">
-                  <img src="https://picsum.photos/900/620?random=13" alt="포스터">
-                </div>
-                <div class="meta-info">
-                  <div class="top-row">
-                    <span class="index-num">No. 03</span>
-                    <span class="category-stamp">Poster Design</span>
-                  </div>
-                  <h3 class="project-title">Exhibition Visual</h3>
-                  <p class="project-desc">종이의 촉감과 대비를 고려한 활판 인쇄풍 아트 페스티벌 메인 포스터.</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- 04. 브랜딩 -->
-            <div class="item">
-              <a href="detail-branding.html" class="work-card" data-fancybox="portfolio" data-type="iframe">
-                <div class="thumb-box">
-                  <img src="https://picsum.photos/900/620?random=14" alt="브랜딩">
-                </div>
-                <div class="meta-info">
-                  <div class="top-row">
-                    <span class="index-num">No. 04</span>
-                    <span class="category-stamp">Branding</span>
-                  </div>
-                  <h3 class="project-title">Atelier Identity</h3>
-                  <p class="project-desc">장인 정신과 지속 가능한 원료의 가치를 담아낸 브랜드 아이덴티티 시스템.</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- 05. 카드뉴스 -->
-            <div class="item">
-              <a href="detail-cardnews.html" class="work-card" data-fancybox="portfolio" data-type="iframe">
-                <div class="thumb-box">
-                  <img src="https://picsum.photos/900/620?random=15" alt="카드뉴스">
-                </div>
-                <div class="meta-info">
-                  <div class="top-row">
-                    <span class="index-num">No. 05</span>
-                    <span class="category-stamp">Card News</span>
-                  </div>
-                  <h3 class="project-title">Editorial Story</h3>
-                  <p class="project-desc">디지털 피드에서도 한 장의 지면을 읽는 듯한 높은 가독성의 에디토리얼 카드뉴스.</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- 06. 브로슈어 -->
-            <div class="item">
-              <a href="detail-brochure.html" class="work-card" data-fancybox="portfolio" data-type="iframe">
-                <div class="thumb-box">
-                  <img src="https://picsum.photos/900/620?random=16" alt="브로슈어">
-                </div>
-                <div class="meta-info">
-                  <div class="top-row">
-                    <span class="index-num">No. 06</span>
-                    <span class="category-stamp">Brochure</span>
-                  </div>
-                  <h3 class="project-title">Craft Collection</h3>
-                  <p class="project-desc">공예 작품들의 결을 온전히 담아낸 여백 중심의 아카이브 북 & 브로슈어.</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- 07. 리플릿 -->
-            <div class="item">
-              <a href="detail-leaflet.html" class="work-card" data-fancybox="portfolio" data-type="iframe">
-                <div class="thumb-box">
-                  <img src="https://picsum.photos/900/620?random=17" alt="리플릿">
-                </div>
-                <div class="meta-info">
-                  <div class="top-row">
-                    <span class="index-num">No. 07</span>
-                    <span class="category-stamp">Leaflet</span>
-                  </div>
-                  <h3 class="project-title">Folding Guide</h3>
-                  <p class="project-desc">3단 접지(Z-fold) 전개 순서에 맞춘 입체적 동선 안내와 인포메이션 리플릿.</p>
-                </div>
-              </a>
-            </div>
-          </div><!--end:.list-->
+          <div class="list" aria-live="polite"></div>
+          <template id="work-card-template"><div class="item"><a class="work-card"><div class="meta-info"><div class="top-row"><span class="index-num"></span><span class="category-stamp"></span></div><h3 class="project-title"></h3></div><div class="thumb-box"><img alt=""></div><p class="project-desc"></p></a></div></template>
+          <p id="works-status" role="status"></p>
         </div><!--end:#works_inner-->
+        <h2 class="section-caption">PROJECT</h2></div>
       </section>
 
       <section id="contact" class="section">
-        <p>contact : 맨 마지막 영역으로 생략해도 됨.
-          (끝인사, 맺음말, 연락수단(연락처), 방명록,
-          메일전송화면)</p>
+        <div class="contact-scroll swiper-no-swiping"><div class="design-stage contact-stage"><div class="contact-paper"><p class="contact-name">IMOOT</p><div class="photo-placeholder" aria-label="사진 자리"></div><dl class="contact-details"><dt>Email</dt><dd>이메일 입력</dd><dt>Instagram</dt><dd>계정 입력</dd><dt>Youtube</dt><dd></dd><dt>Blog</dt><dd>블로그 입력</dd></dl></div><h2 class="section-caption">CONTACT ME</h2></div><div class="guestbook-area">          <form id="guestbook-form" class="guestbook-form">
+            <h2>CONTACT</h2><p>작품을 보고 떠오른 이야기를 남겨주세요.</p>
+            <label for="guest-name">Name</label>
+            <input id="guest-name" name="name" maxlength="40" required autocomplete="name">
+            <label for="guest-message">Message</label>
+            <textarea id="guest-message" name="message" maxlength="500" required rows="5"></textarea>
+            <div class="guestbook-honeypot" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div id="guestbook-turnstile"></div>
+            <button type="submit" disabled>Leave a Message</button>
+            <p id="guestbook-status" role="status" aria-live="polite">방명록 연결을 확인하고 있습니다.</p>
+          </form></div></div>
       </section>
     </div><!--end:.container-->
     <div class="pager"></div>
@@ -287,6 +93,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
   <!--내부스크립트-->
   <script src="./js/script.js"></script>
+  <script src="./js/cms.js"></script>
 </body>
 
 </html>
