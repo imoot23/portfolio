@@ -107,3 +107,12 @@ header #gnb .btn.active { color: #000; text-decoration: underline; text-underlin
 @media(prefers-reduced-motion:reduce) {
   #works #works_inner .list { transition-duration: 0ms !important; }
 }
+
+/* 포커스 이동 시 숨겨진 바깥 Swiper가 별도로 스크롤되는 것을 방지합니다. */
+html, body { height: 100%; overflow: hidden; }
+#wrap, #wrap .section { overflow: clip; }
+#works #works_inner .work-card .meta-info .project-title { color: #fff; font: 400 20px/24px Inter, 'Noto Sans KR', sans-serif; }
+#works #works_inner .work-card .meta-info .top-row .index-num { color: #fff; font: 400 14px/17px Inter, sans-serif; }
+@media(max-width:700px) {
+  #works #works_inner .work-card .meta-info .project-title { font-size: 16px; line-height: 21px; }
+}
