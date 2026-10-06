@@ -140,8 +140,8 @@ html, body { height: 100%; overflow: hidden; }
 @media(max-width:700px) { #main .cover-title { padding-left: 10px; } }
 
 /* 브랜딩 상세 창: 큰 가로 여백을 줄이고 내용 영역만 표시 */
-.branding-modal .fancybox__content,
-.branding-modal .f-html {
+.fancybox__container:has(iframe[src*="detail-branding.html"]) .fancybox__content,
+.fancybox__container:has(iframe[src*="detail-branding.html"]) .f-html {
   width: min(680px, 92vw) !important;
   height: min(900px, 88vh) !important;
   min-width: 0 !important;
@@ -149,4 +149,4 @@ html, body { height: 100%; overflow: hidden; }
   padding: 0 !important;
   background: #e5e9e8;
 }
-.branding-modal iframe { width: 100%; height: 100%; display: block; border: 0; }
+.fancybox__container:has(iframe[src*="detail-branding.html"]) iframe { width: 100%; height: 100%; display: block; border: 0; }
