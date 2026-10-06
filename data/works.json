@@ -15,7 +15,8 @@
     "description": "피그마 웹페이지",
     "published": true,
     "featured": false,
-    "order": 2
+    "order": 2,
+    "detailPage": "detail-branding.html"
   },
   {
     "id": "personal-editorial",
