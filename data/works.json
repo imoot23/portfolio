@@ -1,147 +1,42 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Design Portfolio - IMOOT</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: #0f0f11;
-      color: #ffffff;
-      font-family: 'Pretendard', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px 80px;
-    }
-    header { width: 100%; max-width: 900px; margin-bottom: 40px; text-align: center; }
-    header h1 { font-size: 2rem; letter-spacing: 2px; margin-bottom: 10px; color: #00e5ff; }
-    header p { font-size: 1rem; color: #a0a0a0; }
-    
-    .scroll-container {
-      width: 100%;
-      max-width: 900px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .work-item {
-      width: 100%;
-      background: #1a1a1e;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      border: 1px solid #2a2a30;
-    }
-    .work-item img { width: 100%; height: auto; display: block; }
-    .work-info { padding: 20px 24px; }
-    .work-info h3 { font-size: 1.25rem; margin-bottom: 8px; color: #ffffff; }
-    .work-info p { font-size: 0.95rem; color: #b0b0b0; line-height: 1.5; }
-
-    .back-btn {
-      margin-top: 50px;
-      padding: 14px 32px;
-      background: linear-gradient(135deg, #00e5ff, #0072ff);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-    }
-    .back-btn:hover { opacity: 0.9; transform: scale(1.05); }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>EDIT DESIGN & GRAPHIC WORKS</h1>
-    <p>편집 및 그래픽 디자인 작업 모음입니다.</p>
-  </header>
-
-  <main class="scroll-container">
-    <div class="work-item">
-      <img src="images/works1/work1.jpg" alt="청년문화예술패스">
-      <div class="work-info">
-        <h3>청년문화예술패스 A2 포스터 Design</h3>
-        <p>문화체육관광부 & 한국문화예술위원회 지원사업 안내 포스터</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work3.jpg" alt="여름밤 이야기 메인">
-      <div class="work-info">
-        <h3>2026 야간해설투어 「여름밤 이야기」 포스터</h3>
-        <p>전주시 야간 해설 투어 홍보 메인 포스터</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work2.png" alt="여름밤 이야기 코스">
-      <div class="work-info">
-        <h3>여름밤 이야기 - 코스 안내 리플렛</h3>
-        <p>풍류길 & 나들이길 한옥마을 투어 코스 안내 지도</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work4.jpg" alt="카페 메뉴">
-      <div class="work-info">
-        <h3>카페 디저트 & 샌드위치 메뉴 그래픽</h3>
-        <p>식품 그래픽 컷 연출 및 포토샵 포스터 작업</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work5.jpg" alt="필라테스 전단지">
-      <div class="work-info">
-        <h3>바르다 필라테스 오픈 이벤트 전단지</h3>
-        <p>A4 홍보 전단지 및 쿠폰 디자인</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work6.jpg" alt="무화과 쉐이크">
-      <div class="work-info">
-        <h3>FIG - SHAKE 포스터 그래픽</h3>
-        <p>가우시안 흐림 및 단색 노이즈 효과를 활용한 음료 포스터</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work7.jpg" alt="IU palette">
-      <div class="work-info">
-        <h3>IU Palette 앨범 커버 리터칭</h3>
-        <p>질감 텍스처를 활용한 앨범 커버 리터칭 디자인</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work8.jpg" alt="인스타그램 목업">
-      <div class="work-info">
-        <h3>전주시 공식 인스타그램 모바일 목업</h3>
-        <p>SNS 카드뉴스 규격 및 모바일 디스플레이 그래픽 가공</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work9.jpg" alt="네온사인">
-      <div class="work-info">
-        <h3>Cactus Open 네온사인 그래픽 아트</h3>
-        <p>벽돌 질감 배경 및 네온 광원 효과 연출</p>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="images/works1/work10.jpg" alt="영화 포스터">
-      <div class="work-info">
-        <h3>영화 「왕과 사는 남자」 포스터 합성</h3>
-        <p>인물 누끼 작업 및 한지 텍스처/캘리그라피 합성</p>
-      </div>
-    </div>
-  </main>
-
-  <a href="index.html" class="back-btn">메인 포트폴리오로 돌아가기</a>
-
-</body>
-</html>
+[
+  {
+    "id": "edit-collection",
+    "title": "이젠 AI worker 편집 작업물 모음",
+    "category": "design",
+    "description": "포스터, 리플렛 등",
+    "published": true,
+    "featured": false,
+    "order": 1,
+    "detailPage": "edit-design-detail.html",
+    "thumbnail": "images/works1/work1.jpg"
+  },
+  {
+    "id": "branding-collection",
+    "title": "이젠 AI worker 브랜딩디자인",
+    "category": "design",
+    "description": "피그마 웹페이지",
+    "published": true,
+    "featured": false,
+    "order": 2,
+    "detailPage": "detail-branding.html",
+    "thumbnail": "images/branding/logo.jpg"
+  },
+  {
+    "id": "personal-editorial",
+    "title": "개인 편집디자인",
+    "category": "design",
+    "description": "영화 포스터",
+    "published": true,
+    "featured": false,
+    "order": 3
+  },
+  {
+    "id": "uncho",
+    "title": "26년도 공모전 출품작 <운초가>",
+    "category": "design",
+    "description": "A0 panel, PNG원본",
+    "published": true,
+    "featured": false,
+    "order": 4
+  }
+]
