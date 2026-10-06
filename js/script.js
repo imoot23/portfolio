@@ -85,9 +85,12 @@ document.addEventListener('works:loaded', () => {
   revealWorks();
 });
 
-Fancybox.bind("[data-fancybox]", {
-  // 옵션 (필요 시)
+// 브랜딩 상세페이지는 여백이 적은 세로형 창으로 엽니다.
+Fancybox.bind('[data-work-id="branding-collection"][data-fancybox]', {
+  mainClass: 'branding-modal',
+  groupAttr: false
 });
+Fancybox.bind('[data-fancybox]:not([data-work-id="branding-collection"])', {});
 
 // About 영역에서는 내부 스크롤이 끝날 때만 풀페이지 이동을 허용합니다.
 const aboutScroll = document.querySelector('#about .about-scroll');

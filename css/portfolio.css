@@ -138,3 +138,15 @@ html, body { height: 100%; overflow: hidden; }
 /* 제목 오타 수정: 자간과 세로 위치를 유지하며 글자 영역만 가로 중앙 정렬. */
 #main .cover-title { left: 50%; width: max-content; transform: translateX(-50%); padding-left: 37.68px; }
 @media(max-width:700px) { #main .cover-title { padding-left: 10px; } }
+
+/* 브랜딩 상세 창: 큰 가로 여백을 줄이고 내용 영역만 표시 */
+.branding-modal .fancybox__content,
+.branding-modal .f-html {
+  width: min(680px, 92vw) !important;
+  height: min(900px, 88vh) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: #e5e9e8;
+}
+.branding-modal iframe { width: 100%; height: 100%; display: block; border: 0; }
