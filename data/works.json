@@ -7,6 +7,7 @@
     "published": true,
     "featured": false,
     "order": 1
+    "detailPage": "edit-design-detail.html"
   },
   {
     "id": "branding-collection",
