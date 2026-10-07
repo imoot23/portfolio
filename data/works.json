@@ -1,9 +1,9 @@
 [
   {
-    "id": "edit-collection",
-    "title": "이젠 AI worker 편집 작업물 모음",
+    "id": "design-study",
+    "title": "DESIGN STUDY",
     "category": "design",
-    "description": "포스터, 리플렛 등",
+    "description": "편집 및 그래픽 디자인 모음",
     "published": true,
     "featured": false,
     "order": 1,
@@ -11,32 +11,21 @@
     "thumbnail": "images/works1/work1.jpg"
   },
   {
-    "id": "branding-collection",
-    "title": "이젠 AI worker 브랜딩디자인",
+    "id": "oct-dec-works",
+    "title": "26.Oct.~Dec. WORKS",
     "category": "design",
-    "description": "피그마 웹페이지",
+    "description": "Coming Soon",
     "published": true,
     "featured": false,
-    "order": 2,
-    "detailPage": "detail-branding.html",
-    "thumbnail": "images/branding/logo.jpg"
+    "order": 2
   },
   {
-    "id": "personal-editorial",
-    "title": "개인 편집디자인",
+    "id": "26-project",
+    "title": "26 PROJECT",
     "category": "design",
-    "description": "영화 포스터",
+    "description": "Coming Soon",
     "published": true,
     "featured": false,
     "order": 3
-  },
-  {
-    "id": "uncho",
-    "title": "26년도 공모전 출품작 <운초가>",
-    "category": "design",
-    "description": "A0 panel, PNG원본",
-    "published": true,
-    "featured": false,
-    "order": 4
   }
 ]
